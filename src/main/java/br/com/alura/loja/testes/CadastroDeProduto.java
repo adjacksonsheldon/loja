@@ -11,6 +11,10 @@ import br.com.alura.loja.modelo.Produto;
 import br.com.alura.loja.util.JPAUtil;
 
 public class CadastroDeProduto {
+	
+	/*
+	 * Não tem injeção de dependência pois o foco do curso/projeto era a utilização do JPA puro.
+	 */
 
 	private static EntityManager em = JPAUtil.getEntityManager();
 	private static CategoriaDao categoriaDao = new CategoriaDao(em);

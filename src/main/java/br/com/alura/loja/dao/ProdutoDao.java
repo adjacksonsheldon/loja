@@ -9,6 +9,9 @@ import br.com.alura.loja.modelo.Produto;
 
 public class ProdutoDao {
 
+	/*
+	 * Não tem injeção de dependência pois o foco do curso/projeto era a utilização do JPA puro.
+	 */
 	private EntityManager em;
 
 	public ProdutoDao(EntityManager em) {
