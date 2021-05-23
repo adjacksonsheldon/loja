@@ -1,5 +1,7 @@
 package br.com.alura.loja.testes;
 
+import java.math.BigDecimal;
+
 import javax.persistence.EntityManager;
 
 import br.com.alura.loja.dao.CategoriaDao;
@@ -18,14 +20,23 @@ public class CadastroDeProduto {
 		em.getTransaction().begin();
 		
 		cadastrarProduto();
-		produtoDao.buscarPorNomeDaCategoria("Celulares").forEach(System.out::println);
+		
+		produtoDao.buscarPorNomeDaCategoria("Celulares").forEach(System.out::println);		
+		System.out.println(produtoDao.buscarPrecoDoProdutoComNome("Mi Note 9"));
 		
 		em.close();
 	}
 
 	private static void cadastrarProduto() {
 		Categoria categoria = Categoria.builder().nome("Celulares").build();
-		Produto p = Produto.builder().categoria(categoria).descricao("Cellular Xioami").nome("Mi Note 9").build();
+		
+		Produto p = Produto.builder()
+				.nome("Mi Note 9")
+				.descricao("Cellular Xioami")
+				.categoria(categoria)
+				.preco(new BigDecimal("9.90"))
+				.build();
+		
 		categoriaDao.cadastrar(categoria);
 		produtoDao.cadastrar(p);
 		em.flush();
