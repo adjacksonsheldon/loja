@@ -26,12 +26,12 @@ public class CadastroDeProduto {
 		cadastrarProduto();
 		
 		produtoDao.buscarPorNomeDaCategoria("Celulares").forEach(System.out::println);		
-		System.out.println(produtoDao.buscarPrecoDoProdutoComNome("Mi Note 9"));
+//		System.out.println(produtoDao.buscarPrecoDoProdutoComNome("Mi Note 9"));
 		
 		em.close();
 	}
 
-	private static void cadastrarProduto() {
+	public static void cadastrarProduto() {
 		Categoria categoria = Categoria.builder().nome("Celulares").build();
 		
 		Produto p = Produto.builder()
