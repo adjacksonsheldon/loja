@@ -7,17 +7,15 @@ import javax.persistence.EntityManager;
 
 import br.com.alura.loja.modelo.Pedido;
 import br.com.alura.loja.modelo.RelatorioVendasDTO;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class PedidoDao {
 
 	/*
 	 * Não tem injeção de dependência pois o foco do curso/projeto era a utilização do JPA puro.
 	 */
 	private EntityManager em;
-
-	public PedidoDao(EntityManager em) {
-		this.em = em;
-	}
 	
 	public void cadastrar(Pedido pedido) {
 		this.em.persist(pedido);

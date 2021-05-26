@@ -12,7 +12,9 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import br.com.alura.loja.modelo.Produto;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class ProdutoDao {
 
 	/*
@@ -20,10 +22,6 @@ public class ProdutoDao {
 	 * do JPA puro.
 	 */
 	private EntityManager em;
-
-	public ProdutoDao(EntityManager em) {
-		this.em = em;
-	}
 
 	public void cadastrar(Produto produto) {
 		this.em.persist(produto);

@@ -3,7 +3,9 @@ package br.com.alura.loja.dao;
 import javax.persistence.EntityManager;
 
 import br.com.alura.loja.modelo.Cliente;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class ClienteDao {
 
 	/*
@@ -11,10 +13,6 @@ public class ClienteDao {
 	 */
 	private EntityManager em;
 
-	public ClienteDao(EntityManager em) {
-		this.em = em;
-	}
-	
 	public void cadastrar(Cliente cliente) {
 		this.em.persist(cliente);
 	}
