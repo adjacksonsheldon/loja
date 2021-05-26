@@ -25,8 +25,10 @@ public class CadastroDeProduto {
 		
 		cadastrarProduto();
 		
-		produtoDao.buscarPorNomeDaCategoria("Celulares").forEach(System.out::println);		
+//		produtoDao.buscarPorNomeDaCategoria("Celulares").forEach(System.out::println);		
 //		System.out.println(produtoDao.buscarPrecoDoProdutoComNome("Mi Note 9"));
+		
+		produtoDao.buscarPorParametrosComCriteria("Mi Note 9", null, null).forEach(System.out::println);
 		
 		em.close();
 	}
