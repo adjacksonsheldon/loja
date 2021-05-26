@@ -37,11 +37,11 @@ public class PedidoDaoTest {
 	}
 	
 	@Test
-	public void test() {
+	public void deveriaCadastrarPedidoComIdUm() {
 		produto = cadastrarProduto(em);
-		categoriaDao = new CategoriaDao(em);
 		
 		Pedido p = gerarPedido(em, produto);
+		
 		pedidoDao.cadastrar(p);
 		assertTrue(p.getId().equals(1L));
 	}
@@ -64,15 +64,12 @@ public class PedidoDaoTest {
 
 	private Categoria gerarCategoria(EntityManager em) {
 		Categoria categoria = Categoria.builder().nome("Celulares").build();
-		categoriaDao = new CategoriaDao(em);
 		categoriaDao.cadastrar(categoria);
 		return categoria;
 	}
 
 	private Cliente cadastrarCliente(EntityManager em) {
 		Cliente cliente = new Cliente("Sheldon", "00123456789");
-		
-		clienteDao = new ClienteDao(em);
 		clienteDao.cadastrar(cliente);
 		return cliente;
 	}
