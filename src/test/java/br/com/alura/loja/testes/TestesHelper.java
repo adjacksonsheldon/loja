@@ -16,7 +16,7 @@ public class TestesHelper {
 	private EntityManager em;
 	
 	public TestesHelper(EntityManager em) {
-		this.categoriaDao = new CategoriaDao(em);
+		this.categoriaDao = new CategoriaDao();
 		this.produtoDao = new ProdutoDao(em);
 		this.em = em;
 	}

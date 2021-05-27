@@ -28,7 +28,7 @@ public class PedidoDaoTest {
 	@Before
 	public void setup() {
 		produtoDao = new ProdutoDao(em);
-		categoriaDao = new CategoriaDao(em);
+		categoriaDao = new CategoriaDao();
 		clienteDao = new ClienteDao(em);
 		pedidoDao = new PedidoDao(em);
 		

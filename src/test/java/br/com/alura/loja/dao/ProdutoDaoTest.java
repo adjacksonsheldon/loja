@@ -30,7 +30,7 @@ public class ProdutoDaoTest {
 
 	private void cadastrarCategoria() {
 	
-		CategoriaDao categoriaDao = new CategoriaDao(em);
+		CategoriaDao categoriaDao = new CategoriaDao();
 		Categoria categoria = Categoria.builder().nome("Celular").build();
 		categoriaDao.cadastrar(categoria);		
 		em.getTransaction().commit();
