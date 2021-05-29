@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import br.com.alura.loja.dao.CategoriaDao;
 import br.com.alura.loja.dao.ProdutoDao;
 import br.com.alura.loja.modelo.Categoria;
+import br.com.alura.loja.modelo.CategoriaId;
 import br.com.alura.loja.modelo.Produto;
 
 public class TestesHelper {
@@ -35,7 +36,7 @@ public class TestesHelper {
 	}
 
 	public Categoria cadastroCategoria(String nome) {
-		Categoria categoria = Categoria.builder().nome(nome).build();
+		Categoria categoria = Categoria.builder().categoriaId(CategoriaId.builder().nome(nome).build()).build();
 		categoriaDao.cadastrar(categoria);
 		return categoria;
 	}

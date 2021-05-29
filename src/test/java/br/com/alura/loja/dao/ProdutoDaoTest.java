@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.alura.loja.modelo.Categoria;
+import br.com.alura.loja.modelo.CategoriaId;
 import br.com.alura.loja.modelo.Produto;
 import br.com.alura.loja.util.JPAUtil;
 
@@ -31,7 +32,7 @@ public class ProdutoDaoTest {
 	private void cadastrarCategoria() {
 	
 		CategoriaDao categoriaDao = new CategoriaDao();
-		Categoria categoria = Categoria.builder().nome("Celular").build();
+		Categoria categoria = Categoria.builder().categoriaId(CategoriaId.builder().nome("Celular").tipo("XYZ").build()).build();
 		categoriaDao.cadastrar(categoria);		
 		em.getTransaction().commit();
 	}

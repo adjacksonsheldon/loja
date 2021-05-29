@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import br.com.alura.loja.modelo.Categoria;
+import br.com.alura.loja.modelo.CategoriaId;
 import br.com.alura.loja.modelo.Cliente;
 import br.com.alura.loja.modelo.ItemPedido;
 import br.com.alura.loja.modelo.Pedido;
@@ -63,7 +64,7 @@ public class PedidoDaoTest {
 	}
 
 	private Categoria gerarCategoria(EntityManager em) {
-		Categoria categoria = Categoria.builder().nome("Celulares").build();
+		Categoria categoria = Categoria.builder().categoriaId(CategoriaId.builder().nome("Celular").tipo("XYZ").build()).build();
 		categoriaDao.cadastrar(categoria);
 		return categoria;
 	}

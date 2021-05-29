@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 //Foi abordado durente o curso, coloquei pra aprender e seguir o professor mas eu não acho uma boa prática
-@NamedQuery(name = "Produto.buscarPorNomeDaCategoria", query = "select p from Produto p where p.categoria.nome = :nome")
+@NamedQuery(name = "Produto.buscarPorNomeDaCategoria", query = "select p from Produto p where p.categoria.categoriaId.nome = :nome")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,8 +38,10 @@ public class Produto {
 	private String nome;
 	private String descricao;
 	private BigDecimal preco;
+	
 	@Builder.Default
 	private LocalDate date = LocalDate.now();
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Categoria categoria;
 }
